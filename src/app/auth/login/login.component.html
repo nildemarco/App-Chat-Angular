@@ -1,0 +1,9 @@
+<div [hidden]="!(isloading$ | async)"> Mensajeria </div>
+<input type="mail" [(ngModel)]="user.email" />
+<input type="password" [(ngModel)]="user.password" />
+<input type="text" [(ngModel)]="user.username" />
+<button (click)="login()">Login</button>
+
+<div role="alert" *ngIf='error$ | async'>
+    Ingreso mal el usuario y/o contrasenia y/o email
+</div>
